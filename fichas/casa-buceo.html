@@ -1,90 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Casa 3 Dormitorios en Alquiler Buceo amplio jardín — UrbanRise.io</title>
 
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background: #f9f9f9; }
-    .header { background: #00488F; color: white; padding: 20px; display: flex; align-items: center; }
-    .header img.logo { height: 50px; margin-right: 15px; }
-    .header h1 { margin: 0; font-size: 24px; }
-    .container { max-width: 900px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; }
-    .datos { margin-bottom: 20px; }
-    .datos .field { margin: 5px 0; }
-    .field .label { font-weight: bold; color: #00488F; }
-    .galeria { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-    .galeria img { width: calc(33% - 10px); border-radius: 4px; }
-    .descripcion { margin-bottom: 20px; line-height: 1.5; }
-    .cta { text-align: center; margin: 30px 0; }
-    .cta a { background: #F4950C; color: white; padding: 15px 25px; text-decoration: none; font-size: 18px; border-radius: 5px; }
-    .footer { font-size: 14px; color: #777; text-align: center; margin-top: 40px; }
-  </style>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f5f7;
+      color: #222;
+    }
+
+    .header {
+      background: #00488F;
+      color: #fff;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header img.logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header .title-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .header span.subtitle {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 24px auto 40px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 18px;
+      color: #00488F;
+      border-bottom: 1px solid #e2e5ea;
+      padding-bottom: 8px;
+    }
+
+    .datos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 8px 24px;
+    }
+
+    .field {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .field .label {
+      font-weight: 600;
+      color: #00488F;
+      margin-right: 4px;
+    }
+
+    .descripcion {
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .galeria img {
+      flex: 1 1 calc(33.333% - 10px);
+      max-width: calc(33.333% - 10px);
+      border-radius: 6px;
+      object-fit: cover;
+      height: 180px;
+    }
+
+    @media (max-width: 768px) {
+      .galeria img {
+        flex-basis: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .galeria img {
+        flex-basis: 100%;
+        max-width: 100%;
+        height: 200px;
+      }
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #F4950C;
+      color: #fff;
+      padding: 12px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .cta a:hover {
+      opacity: 0.93;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 12px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="header">
-    <!-- Cambia esta URL por donde tengas alojado tu logo -->
-    <img class="logo" src="https://via.placeholder.com/150x50?text=UrbanRise.io" alt="UrbanRise.io">
-    <h1>UrbanRise.io — Ficha de Propiedad</h1>
-  </div>
+  <header class="header">
+    <img
+      class="logo"
+      src="https://static.tokkobroker.com/tfw_images/14240_URBANRISE/logo_urban_naranja.jpg"
+      alt="UrbanRise.io"
+    />
+    <div class="title-block">
+      <h1>UrbanRise.io — Ficha de Propiedad</h1>
+      <span class="subtitle">Casa 3 Dormitorios en Alquiler Buceo amplio jardín</span>
+    </div>
+  </header>
 
-  <div class="container">
+  <main class="page">
 
-    <div class="datos">
-      <div class="field"><span class="label">Asesor:</span> Gabriel Rearden</div>
-      <div class="field"><span class="label">WhatsApp:</span> 099 863 961</div>
-      <div class="field"><span class="label">Empresa:</span> UrbanRise.io</div>
+    <!-- DATOS PRINCIPALES -->
+    <section class="card">
+      <h2>Datos principales</h2>
+      <div class="datos-grid">
+        <div class="field"><span class="label">Asesor:</span> Gabriel Rearden</div>
+        <div class="field"><span class="label">WhatsApp:</span> 099 863 961</div>
+        <div class="field"><span class="label">Empresa:</span> UrbanRise.io</div>
 
-      <div class="field"><span class="label">Operación:</span> Alquiler</div>
-      <div class="field"><span class="label">Tipo de propiedad:</span> Casa</div>
-      <div class="field"><span class="label">Título:</span> Casa 3 Dormitorios en Alquiler Buceo amplio jardín</div>
-      <div class="field"><span class="label">Ubicación:</span> Buceo, Montevideo (calle Estivao esquina Demóstenes)</div>
-      <div class="field"><span class="label">Precio:</span> 58 000 UYU / mes</div>
-      <div class="field"><span class="label">Superficie cubierta / total:</span> 100 m² cubiertos / 427 m² total (terreno)</div>
-      <div class="field"><span class="label">Dormitorios / ambientes:</span> 3 dormitorios / 4 ambientes</div>
-      <div class="field"><span class="label">Baños:</span> 1 baño + 1 toilette</div>
-      <div class="field"><span class="label">Cochera:</span> 2 cocheras (una techada)</div>
-      <div class="field"><span class="label">Estado:</span> Lista para entrar / buen estado</div>
-      <div class="field"><span class="label">Gastos comunes / expensas:</span> No especificado</div>
-      <div class="field"><span class="label">Amenities / Destacados:</span> Jardín amplio; fondo arbolado; parrillero techado; garaje/depósito; espacio para varios autos</div>
-      <div class="field"><span class="label">Año de construcción:</span> 62 años aprox.</div>
-      <div class="field"><span class="label">Pisos edificio / unidad:</span> 1 planta</div>
-      <div class="field"><span class="label">Orientación:</span> No especificado</div>
-      <div class="field"><span class="label">Mascotas:</span> No especificado</div>
-      <div class="field"><span class="label">Mobiliario:</span> No especificado</div>
+        <div class="field"><span class="label">Operación:</span> Alquiler</div>
+        <div class="field"><span class="label">Tipo de propiedad:</span> Casa</div>
+        <div class="field"><span class="label">Título:</span> Casa 3 Dormitorios en Alquiler Buceo amplio jardín</div>
+        <div class="field"><span class="label">Ubicación:</span> Buceo, Montevideo (calle Estivao esquina Demóstenes)</div>
+        <div class="field"><span class="label">Precio:</span> 58 000 UYU / mes</div>
+        <div class="field"><span class="label">Superficie cubierta / total:</span> 100 m² cubiertos / 427 m² total (terreno)</div>
+        <div class="field"><span class="label">Dormitorios / ambientes:</span> 3 dormitorios / 4 ambientes</div>
+        <div class="field"><span class="label">Baños:</span> 1 baño + 1 toilette</div>
+        <div class="field"><span class="label">Cochera:</span> 2 cocheras (una techada)</div>
+        <div class="field"><span class="label">Estado:</span> Lista para entrar / buen estado</div>
+        <div class="field"><span class="label">Gastos comunes / expensas:</span> No especificado</div>
+        <div class="field"><span class="label">Amenities / Destacados:</span> Jardín amplio; fondo arbolado; parrillero techado; garaje/depósito; espacio para varios autos</div>
+        <div class="field"><span class="label">Año de construcción:</span> 62 años aprox.</div>
+        <div class="field"><span class="label">Pisos edificio / unidad:</span> 1 planta</div>
+        <div class="field"><span class="label">Orientación:</span> No especificado</div>
+        <div class="field"><span class="label">Mascotas:</span> No especificado</div>
+        <div class="field"><span class="label">Mobiliario:</span> No especificado</div>
+        <div class="field">
+          <span class="label">Link original:</span>
+          <a href="https://www.remax.com.uy/listings/casa-3-dormitorios-en-alquiler-buceo-amplio-jardin" target="_blank" rel="noopener noreferrer">
+            https://www.remax.com.uy/listings/casa-3-dormitorios-en-alquiler-buceo-amplio-jardin
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <div class="field"><span class="label">Link original:</span>
-        <a href="https://www.remax.com.uy/listings/casa-3-dormitorios-en-alquiler-buceo-amplio-jardin">
-          https://www.remax.com.uy/listings/casa-3-dormitorios-en-alquiler-buceo-amplio-jardin
+    <!-- GALERÍA -->
+    <section class="card">
+      <h2>Galería de fotos</h2>
+      <div class="galeria">
+        <!-- Cuando tengas las URLs de las fotos, agrégalas así:
+        <img src="URL_FOTO_1" alt="Foto 1" />
+        <img src="URL_FOTO_2" alt="Foto 2" />
+        -->
+      </div>
+      <p style="font-size: 12px; color:#777; margin-top:8px;">
+        *Las imágenes son referenciales y pueden no corresponder exactamente a la realidad actual del inmueble.
+      </p>
+    </section>
+
+    <!-- DESCRIPCIÓN -->
+    <section class="card">
+      <h2>Descripción</h2>
+      <div class="descripcion">
+        Se ofrece en alquiler una casa cómoda y funcional en el barrio Buceo, sobre terreno amplio de 427 m² con generoso fondo arbolado, ideal para disfrutar al aire libre con familia o amigos. La vivienda – distribuida en planta baja – cuenta con un living comedor calefaccionado por estufa con radiadores, cocina luminosa con muebles bajo y sobre mesada, tres dormitorios (dos con placares) y un baño completo más toilette de servicio. Además dispone de garaje techado, cochera adicional, parrillero techado y espacio para varios autos dentro del predio. Es una opción atractiva para quienes buscan una vivienda segura, con jardín y buena ubicación, cerca de avenidas principales y servicios del barrio Buceo.
+      </div>
+
+      <div class="cta">
+        <a href="https://wa.me/59899863961?text=Estoy%20interesado%20en%20esta%20propiedad">
+          Quiero más información
         </a>
       </div>
+    </section>
+
+    <div class="footer">
+      UrbanRise.io – Real Estate &amp; Investments
     </div>
 
-    <div class="galeria">
-      <!-- Cuando tengas las URLs de las fotos, las agregás así:
-      <img src="URL_DE_FOTO_1" alt="Foto 1">
-      <img src="URL_DE_FOTO_2" alt="Foto 2">
-      etc.
-      -->
-    </div>
-
-    <div class="descripcion">
-      Se ofrece en alquiler una casa cómoda y funcional en el barrio Buceo, sobre terreno amplio de 427 m² con generoso fondo arbolado, ideal para disfrutar al aire libre con familia o amigos. La vivienda – distribuida en planta baja – cuenta con un living comedor calefaccionado por estufa con radiadores, cocina luminosa con muebles, tres dormitorios (dos con placares) y un baño completo más toilette de servicio. Además dispone de garaje techado, cochera adicional, parrillero techado y espacio para varios autos. Perfecta para quienes buscan una vivienda segura, con jardín, naturaleza y buena ubicación, cerca de avenidas principales y servicios.
-    </div>
-
-    <div class="cta">
-      <a href="https://wa.me/59899863961?text=Estoy%20interesado%20en%20esta%20propiedad">
-        Quiero más información
-      </a>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    UrbanRise.io – Real Estate & Investments
-  </div>
+  </main>
 
 </body>
 </html>
