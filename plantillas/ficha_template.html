@@ -17,36 +17,34 @@
       color: #222;
     }
 
+    /* HEADER */
     .header {
       background: #00488F;
       color: #fff;
-      padding: 16px 32px;
+      padding: 18px 32px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
     }
 
     .header img.logo {
-      height: 40px;
+      height: 42px;
       width: auto;
       object-fit: contain;
       display: block;
     }
 
-    .header .title-block {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header h1 {
+    .title-block h1 {
       margin: 0;
       font-size: 22px;
       font-weight: 600;
+      line-height: 1.1;
     }
 
-    .header span.subtitle {
+    .title-block .subtitle {
       font-size: 13px;
       opacity: 0.9;
+      margin-top: 3px;
     }
 
     .page {
@@ -60,41 +58,43 @@
       border-radius: 10px;
       padding: 24px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .card h2 {
       margin-top: 0;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       font-size: 18px;
       color: #00488F;
       border-bottom: 1px solid #e2e5ea;
       padding-bottom: 8px;
     }
 
+    /* GRID DE DATOS */
     .datos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 8px 24px;
+      gap: 10px 24px;
     }
 
     .field {
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
-    .field .label {
+    .label {
       font-weight: 600;
       color: #00488F;
-      margin-right: 4px;
     }
 
+    /* DESCRIPCIÓN */
     .descripcion {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.6;
       white-space: pre-line;
     }
 
+    /* GALERÍA */
     .galeria {
       display: flex;
       flex-wrap: wrap;
@@ -125,37 +125,40 @@
       }
     }
 
+    /* CTA */
     .cta {
       text-align: center;
-      margin-top: 16px;
+      margin-top: 22px;
     }
 
     .cta a {
       display: inline-block;
       background: #F4950C;
       color: #fff;
-      padding: 12px 26px;
+      padding: 14px 30px;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
 
     .cta a:hover {
-      opacity: 0.93;
+      opacity: 0.92;
     }
 
     .footer {
       text-align: center;
       font-size: 12px;
       color: #777;
-      margin-top: 12px;
+      margin-top: 18px;
     }
   </style>
 </head>
+
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <img
       class="logo"
@@ -168,12 +171,14 @@
     </div>
   </header>
 
+  <!-- CONTENIDO -->
   <main class="page">
 
     <!-- DATOS PRINCIPALES -->
     <section class="card">
       <h2>Datos principales</h2>
       <div class="datos-grid">
+
         <div class="field"><span class="label">Asesor:</span> Gabriel Rearden</div>
         <div class="field"><span class="label">WhatsApp:</span> 099 863 961</div>
         <div class="field"><span class="label">Empresa:</span> UrbanRise.io</div>
@@ -195,10 +200,7 @@
         <div class="field"><span class="label">Orientación:</span> {ORIENTACION}</div>
         <div class="field"><span class="label">Mascotas:</span> {MASCOTAS}</div>
         <div class="field"><span class="label">Mobiliario:</span> {MOBILIARIO}</div>
-        <div class="field">
-          <span class="label">Link original:</span>
-          <a href="{URL_ORIGINAL}" target="_blank" rel="noopener noreferrer">{URL_ORIGINAL}</a>
-        </div>
+
       </div>
     </section>
 
@@ -208,9 +210,6 @@
       <div class="galeria">
         {GALERIA_IMAGENES}
       </div>
-      <p style="font-size: 12px; color:#777; margin-top:8px;">
-        *Las imágenes son referenciales y pueden no corresponder exactamente a la realidad actual del inmueble.
-      </p>
     </section>
 
     <!-- DESCRIPCIÓN -->
