@@ -187,7 +187,31 @@
         <div class="field"><span class="label">Tipo de propiedad:</span> Casa</div>
         <div class="field"><span class="label">Título:</span> Propiedad UrbanRise</div>
         <div class="field"><span class="label">Ubicación:</span> No especificada</div>
-        <div class="field"><span class="label">Precio:</span> No especificado</div>
+        <div class="field"><span class="label">Precio:</span> $(document).ready(function() {
+					var opened=null;
+					$('.collapse').on('shown.bs.collapse', function (e) {
+						$('header nav .nav-link').removeClass('active');
+						let id=$(this).attr('id');
+						$('a[href="#'+id+'"]').addClass('active');
+						opened=id;
+					});
+
+					$('.collapse').on('hidden.bs.collapse', function () {
+						let id=$(this).attr('id');
+						$('a[href="#'+id+'"]').removeClass('active');
+						opened=null;
+					});
+
+					$(document).click(function (event) {
+						var container =$('#'+opened);//es el modal abierto
+						var container2 =$('#navbarCollapse').find('ul');//es el menu de arriba
+						if ( opened!=null && (!container.is(event.target) && container.has(event.target).length === 0) && (!container2.is(event.target) && container2.has(event.target).length === 0) ) {
+							opened=null;
+							container.collapse('hide')
+							$('a[href="#'+opened+'"]').removeClass('active');
+						}
+					});
+				});</div>
         <div class="field"><span class="label">Superficie cubierta / total:</span> No especificado</div>
         <div class="field"><span class="label">Dormitorios / ambientes:</span> No especificado</div>
         <div class="field"><span class="label">Baños:</span> No especificado</div>
@@ -208,8 +232,7 @@
     <section class="card">
       <h2>Galería de fotos</h2>
       <div class="galeria">
-        <img src="https://century21.com.uy/img/c21uru/c21UruWebRGold.svg" alt="Foto de la propiedad">
-
+        
       </div>
     </section>
 
